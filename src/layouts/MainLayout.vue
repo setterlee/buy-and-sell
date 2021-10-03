@@ -1,17 +1,32 @@
 <template>
   <q-layout view="hhh lpR fff">
 
-    <q-header bordered class="bg-primary text-white">
-      <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+    
 
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          Buy And Sell
-        </q-toolbar-title>
-      </q-toolbar>
+    <q-header bordered class="bg-primary text-white">
+      <div class="row no-wrap">
+        <q-toolbar class="col-4">
+          <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+          <q-toolbar-title>
+            <q-avatar>
+              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+            </q-avatar>
+            Buy And Sell
+          </q-toolbar-title>
+        </q-toolbar>
+        <q-toolbar class="col-4">
+          <q-input rounded standout dense label="What you like today...?" class="q-my-sm search-input">
+            <template v-slot:append>
+              <q-icon name="search" @click="text = ''" class="cursor-pointer" />
+            </template>
+          </q-input>
+        </q-toolbar>
+        <q-toolbar class="col-4">
+        </q-toolbar>
+        
+      </div>
+      
+    
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered >
@@ -32,6 +47,14 @@
 
   </q-layout>
 </template>
+
+<style scoped>
+
+.search-input {
+  width: 100%
+}
+
+</style>
 
 <script>
 import { ref } from 'vue'
