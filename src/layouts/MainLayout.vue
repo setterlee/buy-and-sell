@@ -3,7 +3,7 @@
 
     
 
-    <q-header bordered class="bg-primary text-white">
+    <q-header>
       <div class="row no-wrap">
         <q-toolbar class="col-4">
           <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
@@ -15,7 +15,7 @@
           </q-toolbar-title>
         </q-toolbar>
         <q-toolbar class="col-4">
-          <q-input rounded standout dense label="What you like today...?" class="q-my-sm search-input">
+          <q-input color="secondary" standout="bg-white text-secondary" rounded outlined dense class="q-my-sm search-input">
             <template v-slot:append>
               <q-icon name="search" @click="text = ''" class="cursor-pointer" />
             </template>
@@ -51,8 +51,10 @@
 <style scoped>
 
 .search-input {
-  width: 100%
+  width: 100%;
+  color: #fff
 }
+
 
 </style>
 
